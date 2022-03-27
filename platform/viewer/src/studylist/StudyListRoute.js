@@ -255,7 +255,9 @@ function StudyListRoute(props) {
             const viewerPath = RoutesUtil.parseViewerPath(appConfig, server, {
               studyInstanceUIDs: studyInstanceUID,
             });
-            history.push(viewerPath);
+            window.location.href = viewerPath;
+            //history.push(viewerPath);
+            //不知道为什么用push，第一次滚动不了。
           }}
           // Table Header
           sort={sort}
