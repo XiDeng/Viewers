@@ -387,7 +387,7 @@ class Viewer extends Component {
                     const { thumbnails } = this.state;
                     return (
                       <ConnectedStudyBrowser
-                        isPhone={os.isPhone}
+                        isPhone={os.isPhone || os.isAndroid}
                         ViewerState={this.state}
                         studies={thumbnails}
                         studyMetadata={this.props.studies}
@@ -396,7 +396,7 @@ class Viewer extends Component {
                           studyPrefetcher.enabled &&
                           studyPrefetcher.displayProgress
                         }
-                        supportsDrag={!os.isPhone && !os.isTablet}
+                        supportsDrag={!os.isPhone && !os.isTablet && !os.isAndroid}
                       />
                     );
                   }}
